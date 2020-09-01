@@ -1,0 +1,23 @@
+{
+  "name": "selleverything",
+  "version": "1.0.0",
+  "description": "Sell Everything",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavo-camello/SellEverything.git"
+  },
+  "author": "Gustavo Camello",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gustavo-camello/SellEverything/issues"
+  },
+  "homepage": "https://github.com/gustavo-camello/SellEverything#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  }
+}

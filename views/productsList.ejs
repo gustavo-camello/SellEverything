@@ -1,0 +1,8 @@
+<h1>Products list page</h1>
+
+<% products.forEach(product => { %>
+  <div>
+    <h4><%= product.name %></h4>
+    <img src="<%= product.img %>" alt="">
+  </div>
+<% }); %>
