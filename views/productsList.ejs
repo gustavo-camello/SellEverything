@@ -1,8 +1,34 @@
-<h1>Products list page</h1>
+<%- include ("partials/header") %>
 
-<% products.forEach(product => { %>
-  <div>
-    <h4><%= product.name %></h4>
-    <img src="<%= product.img %>" alt="">
+<div class="container">
+  <header class="jumbotron text-center">
+    <h1>See the Products Available</h1>
+    <p>You can find everything, from a apron to a toothbrush</p>
+    <p>
+      <a href="/productsList/newProduct" class="btn btn-primary btn-lg">Add New Product</a>
+    </p>
+    
+  </header>
+
+  <section id="products-list">
+    <div class="row">
+    <% products.forEach(product => { %>
+      <div class="col-lg-3 col-md-4 col-sm-6 my-3">
+      <div class="card">
+        <img src="<%= product.img %>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= product.name %></h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <% }); %>
   </div>
-<% }); %>
+
+  </section>
+
+</div>
+
+
+<%- include ("partials/footer") %>
