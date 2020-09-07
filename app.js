@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
-app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 
@@ -31,15 +30,17 @@ app.get('/productsList', (req, res) => {
 
 app.get('/productsList/newProduct', (req, res) => {
   res.render('addProduct.ejs')
+  
 });
 
 app.post('/productsList', (req, res) => {
   let name = req.body.name;
-  let image = req.body.image;
-  let newProduct = {name: name, img: image};
+  let img = req.body.img;
+  let newProduct = {name: name, img: img};
+
   products.push(newProduct);
 
-  res.redirect('/productsList');
+  res.redirect("productsList");
 });
 
 

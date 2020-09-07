@@ -6,20 +6,22 @@
 
 <div class="container">
   <div class="row">
-    <form style="margin: 0 auto; width: 40%;">
+    <form style="margin: 0 auto; width: 40%;" method="POST" action="/productsList">
       <div class="form-group">
         <label for="name">Product Name</label>
         <input type="text" class="form-control" id="name" name="name">
       </div>
       <div class="form-group">
-        <label for="image-url">Image URL</label>
-        <input type="text" class="form-control" id="image-url" name="image">
+        <label for="img">Image URL</label>
+        <input type="text" class="form-control" id="img" name="img">
       </div>
       <button type="submit" class="btn btn-primary btn-block" style="width: 40%; margin: 0 auto;">Add Product</button>
     </form>
   </div>
 </div>
 
-
 <%- include ("partials/footer.ejs") %>
 
+
+
+<a href="/productsList">Go back</a>
