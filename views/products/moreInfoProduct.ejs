@@ -1,4 +1,4 @@
-<%- include ("partials/header.ejs") %>
+<%- include ("../partials/header.ejs") %>
 
 <h1>This is a show template</h1>
 
@@ -8,8 +8,12 @@
 
 <p><%= product.description %></p>
 
+<p>
+  <a class="btn btn-success" href="/productsList/<%= product._id %>/comments/new">Add New Comment</a>
+</p>
+
 <% product.comments.forEach((comment) => { %>
   <p><strong><%= comment.author %></strong> - <%= comment.text %></p>
 <% }) %>
 
-<%- include ("partials/footer.ejs") %>
+<%- include ("../partials/footer.ejs") %>

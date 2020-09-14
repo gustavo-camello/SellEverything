@@ -1,8 +1,12 @@
+const product = require('./modules/product');
+const comment = require('./modules/comment');
+
 const express = require('express'),
       app = express(),
       bodyParser = require('body-parser'),
       mongoose = require('mongoose'),
       Product = require('./modules/product'),
+      Comment = require('./modules/comment'),
       seedDB = require('./seeds');
 
 
@@ -25,29 +29,29 @@ seedDB();
 
 // ROUTE PAGES
 
-// INDEX page
+// LP page
 app.get('/', (req, res) => {
   res.render('landingPage')
 });
 
-// all products to sell page
+// INDEX ROUTE - all products to sell page
 app.get('/productsList', (req, res) => {
   Product.find({}, (err, allProducts) => {
     if (err) {
       console.log(err);
     } else {
-      res.render("index", {products: allProducts});
+      res.render('products/index', {products: allProducts});
     }
   })
 });
 
-// Show form to add a new product
+// NEW ROUTE - Show form to add a new product
 app.get('/productsList/newProduct', (req, res) => {
-  res.render('addProduct.ejs')
+  res.render('products/addProduct.ejs')
   
 });
 
-// Add a new product
+// CREATE ROUTE -  Add a new product
 app.post('/productsList', (req, res) => {
   let name = req.body.name;
   let img = req.body.img;
@@ -59,26 +63,57 @@ app.post('/productsList', (req, res) => {
     if(err) {
       console.log(err);
     } else {
-      res.redirect("productsList");
+      res.redirect('productsList');
     }
   })
 });
 
-// show more information about one product
+// SHOW ROUTE - show more information about one product
 app.get("/productsList/:id", (req, res) => {
-  Product.findById(req.params.id).populate("comments").exec((err, foundProduct) => {
+  Product.findById(req.params.id).populate('comments').exec((err, foundProduct) => {
     if (err) {
       console.log(err);
     } else {
       console.log(foundProduct);
-      res.render("moreInfoProduct", {product: foundProduct});
+      res.render('products/moreInfoProduct', {product: foundProduct});
     }
   });
-
 });
 
+//  ======================
+// COMMENTS ROUTE
+// ========================
 
-// SERVER LISTINING
+app.get('/productsList/:id/comments/new', (req, res) => {
+  Product.findById(req.params.id, (err, product) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('comments/new', {product: product});
+    }
+  })
+});
+
+app.post('/productsList/:id/comments', (req, res) => {
+  Product.findById(req.params.id, (err, product) => {
+    if (err) {
+      console.log(err);
+      res.redirect('/productsList');
+    } else {
+      Comment.create(req.body.comment, (err, comment) => {
+        if (err) {
+          console.log(err);
+        } else {
+          product.comments.push(comment);
+          product.save();
+          res.redirect('/productsList/' + product._id);
+        }
+      })
+    }
+  })
+});
+
+// --------------------------------- SERVER LISTINING -------------------------------------
 app.listen(3000, '127.0.0.1', ()=> {
   console.log("Server has started...")
 });
