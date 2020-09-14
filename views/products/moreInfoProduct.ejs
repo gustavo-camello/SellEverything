@@ -1,19 +1,38 @@
 <%- include ("../partials/header.ejs") %>
 
-<h1>This is a show template</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <p class="lead">Contact Info</p>
+      <div class="list-group">
+        <li class="list-group-item">Name</li>
+        <li class="list-group-item">Email</li>
+        <li class="list-group-item">Phone</li>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="card">
+        <img src="<%= product.img %>" alt="" class="img-fluid" />
+        <p><a href=""><%= product.name %></a></p>
+        <p class="text-right">€15.00</p>
+        <p><%= product.description %></p>
+      </div>
 
-<p><%= product.name %></p>
+      <div class="card my-3">
+        <div class="text-right">
+          <a class="btn btn-success" href="/productsList/<%= product._id %>/comments/new">Add New Comment</a>
+        </div>
+        <div class="list-group list-group-flush">
+          <% product.comments.forEach((comment) => { %>
+            <p><strong><%= comment.author %></strong></p>
+            <p> <%= comment.text %></p>
+            <p>10 days ago</p>
+            <% }) %>
+        </div>  
+      </div>
 
-<img src="<%= product.img %>" alt="">
-
-<p><%= product.description %></p>
-
-<p>
-  <a class="btn btn-success" href="/productsList/<%= product._id %>/comments/new">Add New Comment</a>
-</p>
-
-<% product.comments.forEach((comment) => { %>
-  <p><strong><%= comment.author %></strong> - <%= comment.text %></p>
-<% }) %>
+    </div>
+  </div>
+</div>
 
 <%- include ("../partials/footer.ejs") %>
