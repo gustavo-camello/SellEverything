@@ -1,15 +1,15 @@
 <%- include ("../partials/header.ejs") %>
 
 <header class="jumbotron text-center">
-  <h1>Add New Comment to <%= product.name %></h1>
+  <h1>Edit the Comment</h1>
 </header>
 
 <div class="container">
   <div class="row">
-    <form style="margin: 0 auto; width: 40%;" method="POST" action="/productsList/<%= product._id %>/comments">
+    <form style="margin: 0 auto; width: 40%;" method="POST" action="/productsList/<%= product_id %>/comments/<%= comment._id %>?_method=PUT">
       <div class="form-group">
         <label for="img">Comment</label>
-        <input type="text" class="form-control" id="img" name="comment[text]">
+        <input type="text" class="form-control" id="img" name="comment[text]" value="<%= comment.text %>">
       </div>
       <button type="submit" class="btn btn-primary btn-block" style="width: 40%; margin: 0 auto;">Add Comment</button>
     </form>
