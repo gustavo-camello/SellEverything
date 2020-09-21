@@ -45,10 +45,11 @@ router.post('/', middleware.isLoggedIn, (req, res) => {
 });
 
 // SHOW ROUTE - show more information about one product
-router.get("/:id", (req, res) => {
+router.get('/:id', (req, res) => {
   Product.findById(req.params.id).populate('comments').exec((err, foundProduct) => {
-    if (err) {
-      console.log(err);
+    if (err || !foundProduct) {
+      req.flash('error', 'Product Not Found');
+      res.redirect('back');
     } else {
       console.log(foundProduct);
       res.render('products/moreInfoProduct', {product: foundProduct});

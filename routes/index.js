@@ -23,10 +23,11 @@ route.post('/register', (req, res) => {
   let newUser = new User({username: req.body.username});
   User.register(newUser, req.body.password, (err, user) => {
     if (err){
-      console.log(err);
+      req.flash('error', err.message);
       return res.render('register');
     }
     passport.authenticate('local')(req, res, ()=> {
+      req.flash('success', 'Welcome' + user.username);
       res.redirect('/productsList');
     })
   })
@@ -47,15 +48,8 @@ route.post('/login', passport.authenticate('local',
 // Logout Route
 route.get('/logout', (req, res) => {
   req.logout();
+  req.flash('success', 'Logged you out');
   res.redirect('/productsList');
 });
-
-// Middleware - check if user is logged in
-function isLoggedIn(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-  res.redirect('/login');
-};
 
 module.exports = route;

@@ -24,6 +24,7 @@ router.post('/', middleware.isLoggedIn, (req, res) => {
     } else {
       Comment.create(req.body.comment, (err, comment) => {
         if (err) {
+          req.flash('error', 'Something went wrong');
           console.log(err);
         } else {
           comment.author.id = req.user._id;
@@ -32,6 +33,7 @@ router.post('/', middleware.isLoggedIn, (req, res) => {
           product.comments.push(comment);
           product.save();
           console.log(comment);
+          req.flash('success', 'Successfully added comment');
           res.redirect('/productsList/' + product._id);
         }
       })
@@ -41,14 +43,19 @@ router.post('/', middleware.isLoggedIn, (req, res) => {
 
 // Show the form the edit
 router.get('/:comment_id/edit', middleware.checkCommentOwnership,  (req, res) => {
-  Comment.findById(req.params.comment_id, (err, foundComment) => {
-    if (err) {
-      console.log(err)
-    }else {
-      res.render('comments/edit', {product_id: req.params.id, comment: foundComment});
+  Product.findById(req.params.id, (err, productFound) => {
+    if(err || !productFound) {
+      req.flash('error', 'Product Not Found');
+      return res.redirect('back');
     }
-  })
-  
+    Comment.findById(req.params.comment_id, (err, foundComment) => {
+      if (err) {
+        console.log(err)
+      }else {
+        res.render('comments/edit', {product_id: req.params.id, comment: foundComment});
+      }
+    })
+  })  
 });
 
 // Update the comment
@@ -68,6 +75,7 @@ router.delete('/:comment_id', middleware.checkCommentOwnership, (req, res) => {
     if (err) {
       res.redirect('back');
     } else {
+      req.flash('success', 'Comment deleted')
       res.redirect('/productsList/' + req.params.id);
     }
   })
