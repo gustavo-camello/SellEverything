@@ -2,6 +2,14 @@ const Comment = require('../modules/comment');
 const Product = require('../modules/product');
 const middleware = {};
 
+middleware.isLoggedIn = (req, res, next) => {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  req.flash('error', "Please Login First!");
+  res.redirect('/login');
+};
+
 middleware.checkProductOwnership = (req, res, next) => {
   if (req.isAuthenticated()) {
     Product.findById(req.params.id, (err, foundProduct) => {
@@ -43,13 +51,7 @@ middleware.checkCommentOwnership = (req, res, next) => {
   }
 }
 
-middleware.isLoggedIn = (req, res, next) => {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-  req.flash('error', "Please Login First!");
-  res.redirect('/login');
-};
+
 
 
 module.exports = middleware

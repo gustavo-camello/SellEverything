@@ -41,7 +41,7 @@ route.get('/login', (req, res) => {
 route.post('/login', passport.authenticate('local', 
   {
     successRedirect: '/productsList',
-    failureRedirect: '/login'
+    failureRedirect: '/register'
   }), (req, res) => {
 });
 
