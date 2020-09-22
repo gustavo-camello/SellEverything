@@ -70,6 +70,6 @@ app.use('/productsList/:id/comments', commentRoutes);
 
 
 // --------------------------------- SERVER LISTINING -------------------------------------
-app.listen(3000, '127.0.0.1', ()=> {
+app.listen(process.env.PORT, ()=> {
   console.log("Server has started...")
 });
