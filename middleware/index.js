@@ -33,7 +33,7 @@ middleware.checkProductOwnership = (req, res, next) => {
 middleware.checkCommentOwnership = (req, res, next) => {
   if (req.isAuthenticated()) {
     Comment.findById(req.params.comment_id, (err, commentFound) => {
-      if(err || commentFound) {
+      if(err || !commentFound) {
         req.flash('error', 'Comment not found');
         res.redirect('back');
       } else {
