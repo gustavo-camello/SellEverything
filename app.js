@@ -30,7 +30,16 @@ app.use(flash());
 // ==================
 // Connect To DB (mongoDB)
 // ==================
-mongoose.connect('mongodb://localhost/sell_everything', {
+// Locally
+// mongoose.connect('mongodb://localhost/sell_everything', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// })
+// .then(() => console.log('Connected to DB!'))
+// .catch(error => console.log(error.message));
+
+// remote
+mongoose.connect('mongodb+srv://gucamello:qR1JOqLdHpM2Xd8n@selleverything.ykevb.mongodb.net/SellEverything?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
@@ -73,3 +82,4 @@ app.use('/productsList/:id/comments', commentRoutes);
 app.listen(process.env.PORT, ()=> {
   console.log("Server has started...")
 });
+
