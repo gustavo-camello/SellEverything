@@ -39,7 +39,7 @@ app.use(flash());
 // .catch(error => console.log(error.message));
 
 // remote
-mongoose.connect('mongodb+srv://gucamello:qR1JOqLdHpM2Xd8n@selleverything.ykevb.mongodb.net/SellEverything?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://gucamello:bWzV9Xkw9rS4T5Og@selleverything.nmjyf.mongodb.net/SellEverything?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
@@ -79,8 +79,6 @@ app.use('/productsList/:id/comments', commentRoutes);
 
 
 // --------------------------------- SERVER LISTINING -------------------------------------
-app.listen(process.env.PORT, ()=> {
+app.listen(process.env.PORT, process.env.IP, ()=> {
   console.log("Server has started...")
 });
-
-
