@@ -30,22 +30,13 @@ app.use(flash());
 // ==================
 // Connect To DB (mongoDB)
 // ==================
-// Locally
-console.log(process.env.DATABASEURL);
-mongoose.connect('mongodb://localhost/sell_everything', {
+let url = process.env.DATABASEURL || 'mongodb://localhost/sell_everything';
+mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
 .then(() => console.log('Connected to DB!'))
 .catch(error => console.log(error.message));
-
-// remote
-// mongoose.connect('mongodb+srv://gucamello:bWzV9Xkw9rS4T5Og@selleverything.nmjyf.mongodb.net/SellEverything?retryWrites=true&w=majority', {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true
-// })
-// .then(() => console.log('Connected to DB!'))
-// .catch(error => console.log(error.message));
 
 // Seed the database
 // seedDB();
@@ -84,4 +75,4 @@ app.listen(process.env.PORT, process.env.IP, ()=> {
   console.log("Server has started...")
 });
 
-app.listen(5000, '127.0.0.1', () => console.log('Server is running'));
+// app.listen(5000, '127.0.0.1', () => console.log('Server is running'));
