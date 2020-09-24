@@ -1,0 +1,50 @@
+@use 'base';
+
+#products-list {
+    color: base.$color1;
+    font-family: base.$main-font;
+
+    .card {
+        background-color: base.$color2;
+        border: 2px solid base.$color1;
+        border-radius: 6px;
+
+        img {
+            height: 10rem;
+        }
+    }
+
+    // .card:hover {
+    //     border: 2px solid base.$color1;
+    //     border-radius: 6px;
+    // }
+
+    .main-button {
+        padding: 0.2rem 0.5rem 0.1rem 0.5rem;
+        background-color: base.$color1;
+        color: base.$color2;
+    }
+
+    .main-button:hover {
+        background-color: white;
+        color: base.$color1;
+    }
+
+    #test:hover {
+        background-color: base.$color1;
+        color: base.$color2;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    #products-list {
+
+        .card {
+
+            img {
+                height: 20rem;
+            }
+        }
+        
+    }
+}

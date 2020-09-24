@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;700&family=Josefin+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+
     <!-- Bootstrap CDN -->
     <link
       rel="stylesheet"
@@ -18,8 +21,8 @@
   </head>
   <body>
     <!-- Top Menu -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">Navbar</a>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand logo" href="/">SELLeverything</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -37,9 +40,11 @@
       >
         <div class="navbar-nav">
           <% if (!currentUser) { %>
-          <a class="nav-link active" href="/login">Login</a>
+          <a class="nav-link" href="/productsList">Products</a>
+          <a class="nav-link" href="/login">Login</a>
           <a class="nav-link" href="/register">Sign Up</a>
           <% } else { %>
+          <a class="nav-link" href="/productsList">Products</a>
           <a class="nav-link" href=""
             >Signed In As <%= currentUser.username %></a
           >

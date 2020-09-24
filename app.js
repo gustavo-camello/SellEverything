@@ -75,4 +75,4 @@ app.listen(process.env.PORT, process.env.IP, ()=> {
   console.log("Server has started...")
 });
 
-// app.listen(5000, '127.0.0.1', () => console.log('Server is running'));
+app.listen(5000, '127.0.0.1', () => console.log('Server is running'));

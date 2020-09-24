@@ -1,0 +1,12 @@
+@use 'base';
+
+footer {
+    font-family: base.$main-font;
+    .container-fluid {
+        background-color: base.$color1;
+    }
+
+    p {
+        color: base.$color2;
+    }
+}

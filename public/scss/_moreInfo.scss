@@ -1,0 +1,10 @@
+@use 'base';
+
+#more-info-product {
+    font-family: base.$main-font;
+    .card {
+        img {
+            height: 35rem;
+        }
+    }
+}

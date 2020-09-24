@@ -1,35 +1,36 @@
 <%- include ("../partials/header") %>
 
-
-<div class="container">
-  <header class="jumbotron text-center">
-    <h1>See the Products Available</h1>
-    <p>You can find everything, from a apron to a toothbrush</p>
+<section id="products-list">
+  <div class="jumbotron jumbotron-fluid text-center bg-white style-jumbotron">
+    <h1 class="display-4">See the Products Available</h1>
+    <p class="lead">Find what you are looking for</p>
     <p>
       <a href="/productsList/newProduct" class="btn btn-primary btn-lg">Add New Product</a>
     </p>
-    
-  </header>
-
-  <section id="products-list">
-    <div class="row">
-    <% products.forEach(product => { %>
-      <div class="col-lg-3 col-md-4 col-sm-6 my-3">
-      <div class="card">
-        <img src="<%= product.img %>" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><%= product.name %></h5>
-          <p class="card-text"><%= product.description.substring(0, 50) %>...</p>
-          <a href="/productsList/<%= product._id %>" class="btn btn-primary">More info</a>
-        </div>
-      </div>
-    </div>
-    <% }); %>
   </div>
+  
+  <main>
+    <div class="container">
+        <div class="row">
+        <% products.forEach(product => { %>
+          <div class="col-lg-3 col-md-4 col-sm-6 my-4">
+          <div class="card">
+            <img src="<%= product.img %>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%= product.name.substring(0,10) %></h5>
+              <p class="card-text"><%= product.description.substring(0, 10) %>...</p>
+              <a href="/productsList/<%= product._id %>" class="main-button">More info</a>
+            </div>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    
+  </main>
 
-  </section>
+  </div>
+</section>
 
-</div>
 
 
 <%- include ("../partials/footer") %>

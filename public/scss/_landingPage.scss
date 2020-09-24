@@ -1,0 +1,32 @@
+@use 'base';
+
+#lpContent {
+    background-color: base.$color2;
+    height: calc(100vh - 274px);
+
+    .jumbotron {
+        background-color: base.$color2;
+        margin-bottom: 0;
+        
+    }
+
+    .container {
+        font-family: base.$main-font;
+        color: base.$color1;
+
+        .main-button {
+            margin-top: 2rem;
+            background-color: base.$color3;
+            padding: 1.5rem 1.5rem 0.7rem 1.5rem;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #lpContent {
+        h1 {
+            font-size: 2rem;
+        }
+    }
+}

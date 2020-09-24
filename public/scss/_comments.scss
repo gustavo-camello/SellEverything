@@ -1,0 +1,48 @@
+@use 'base';
+
+.add-edit-comments{
+    color: base.$color1;
+    font-family: base.$main-font;
+
+    .container {
+        margin-bottom: 3rem;
+
+        form {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        textarea {
+            resize: none;
+            height: 10rem;
+        }
+
+        .main-button {
+            padding: 0.5rem;
+            background-color: base.$color1;
+            color: base.$color2;
+            display: block;
+            margin: 0 auto;
+            margin-top: 3rem !important;
+        }
+    
+        .main-button:hover {
+            background-color: white;
+            color: base.$color1;
+        }
+
+        .form-control:focus {
+            box-shadow: inset 0 1px 1px rgba(32, 106, 93, 1), 0 0 8px rgba(32, 106, 93, 1);
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .add-edit-comments {
+        .container {
+            form {
+                width: 80%;
+            }
+        }
+    }
+}

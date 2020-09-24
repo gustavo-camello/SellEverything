@@ -1,51 +1,59 @@
 <%- include ("../partials/header.ejs") %>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-3">
-      <p class="lead">Contact Info</p>
-      <div class="list-group">
-        <li class="list-group-item">Name</li>
-        <li class="list-group-item">Email</li>
-        <li class="list-group-item">Phone</li>
-      </div>
-    </div>
-    <div class="col-md-9">
-      <div class="card">
-        <img src="<%= product.img %>" alt="" class="img-fluid" />
-        <p><a href=""><%= product.name %></a></p>
-        <p class="text-right">€15.00</p>
-        <p><%= product.description %></p>
-        <p><em>Submitted By <%= product.author.username %></em></p>
-        <% if (currentUser && product.author.id.equals(currentUser._id)) { %>
-        <a class="btn btn-warning" href="/productsList/<%= product._id %>/edit">Edit</a>
-        <form action="/productsList/<%= product._id %>?_method=DELETE" method="POST">
-          <button class="btn btn-danger">Delete</button>
-        </form>
-        <% } %>
-      </div>
+<section id="more-info-product">
 
-      <div class="card my-3">
-        <div class="text-right">
-          <a class="btn btn-success" href="/productsList/<%= product._id %>/comments/new">Add New Comment</a>
+  <div class="jumbotron jumbotron-fluid text-center bg-white style-jumbotron">
+    <h1 class="display-4"><%= product.name %></h1>
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <p class="lead">Contact Info</p>
+        <div class="list-group">
+          <li class="list-group-item">Name: Gustavo Camello</li>
+          <li class="list-group-item">Email: email@gmail.com</li>
+          <li class="list-group-item">Phone:12312312</li>
         </div>
-        <div class="list-group list-group-flush">
-          <% product.comments.forEach((comment) => { %>
-            <p><strong><%= comment.author.username %></strong></p>
-            <p> <%= comment.text %></p>
-            <p>10 days ago</p>
-            <% if (currentUser && comment.author.id.equals(currentUser._id)) { %>
-            <a href="/productsList/<%= product._id %>/comments/<%= comment._id %>/edit" class="btn btn-xs btn-warning">Edit</a>
-            <form action="/productsList/<%= product._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
-              <input type="submit" class="btn btn-xs btn-danger" value="Delete">
-            </form>
-            <% } %>
-            <% }) %>
-        </div>  
       </div>
-
+      <div class="col-md-9">
+        <div class="card">
+          <img src="<%= product.img %>" alt="" class="img-fluid" />
+          <p class="text-right">€15.00</p>
+          <p><%= product.description %></p>
+          <p><em>Submitted By <%= product.author.username %></em></p>
+          <% if (currentUser && product.author.id.equals(currentUser._id)) { %>
+          <a class="btn btn-warning" href="/productsList/<%= product._id %>/edit">Edit</a>
+          <form action="/productsList/<%= product._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-danger">Delete</button>
+          </form>
+          <% } %>
+        </div>
+  
+        <div class="card my-3">
+          <div class="text-right">
+            <a class="btn btn-success" href="/productsList/<%= product._id %>/comments/new">Add New Comment</a>
+          </div>
+          <div class="list-group list-group-flush">
+            <% product.comments.forEach((comment) => { %>
+              <p><strong><%= comment.author.username %></strong></p>
+              <p> <%= comment.text %></p>
+              <p>10 days ago</p>
+              <% if (currentUser && comment.author.id.equals(currentUser._id)) { %>
+              <a href="/productsList/<%= product._id %>/comments/<%= comment._id %>/edit" class="btn btn-xs btn-warning">Edit</a>
+              <form action="/productsList/<%= product._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+              </form>
+              <% } %>
+              <% }) %>
+          </div>  
+        </div>
+  
+      </div>
     </div>
   </div>
-</div>
+</section>
+
 
 <%- include ("../partials/footer.ejs") %>

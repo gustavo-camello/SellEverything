@@ -1,23 +1,23 @@
 <%- include ("../partials/header.ejs") %>
 
-<header class="jumbotron text-center">
-  <h1>Edit the Comment</h1>
-</header>
-
-<div class="container">
-  <div class="row">
-    <form style="margin: 0 auto; width: 40%;" method="POST" action="/productsList/<%= product_id %>/comments/<%= comment._id %>?_method=PUT">
-      <div class="form-group">
-        <label for="img">Comment</label>
-        <input type="text" class="form-control" id="img" name="comment[text]" value="<%= comment.text %>">
-      </div>
-      <button type="submit" class="btn btn-primary btn-block" style="width: 40%; margin: 0 auto;">Add Comment</button>
-    </form>
+<section id="edit-comment" class="add-edit-comments">
+  <div class="jumbotron text-center style-jumbotron bg-white">
+    <h1>Edit Your Question</h1>
   </div>
-</div>
+  
+  <div class="container">
+    <div class="row">
+      <form method="POST" action="/productsList/<%= product_id %>/comments/<%= comment._id %>?_method=PUT">
+        <div class="form-group">
+          <label for="comment">Question</label>
+          <textarea name="comment[text]" id="comment" class="form-control"><%= comment.text %></textarea>
+        </div>
+        <button type="submit" class="main-button">Save</button>
+      </form>
+    </div>
+  </div>
+  
+</section>
 
 <%- include ("../partials/footer.ejs") %>
 
-
-
-<a href="/productsList">Go back</a>

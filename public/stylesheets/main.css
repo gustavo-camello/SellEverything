@@ -1,5 +1,239 @@
-body {
-  background-color: red;
+.logo {
+  font-family: "Josefin Sans", sans-serif;
+  color: #81b214 !important;
+}
+
+.logo:hover {
+  color: #81b214;
+}
+
+.main-button {
+  color: #206a5d;
+  text-decoration: none !important;
+  border: 1px solid #206a5d;
+  border-radius: 10px;
+  padding: 0.5rem 0.5rem 0.1rem 0.5rem;
+  transition: all 0.5s ease;
+  display: inline-block;
+}
+
+.main-button:hover {
+  color: #f1f1e8;
+  background-color: #206a5d;
+}
+
+.style-jumbotron h1 {
+  font-weight: bold;
+  color: #206a5d;
+}
+
+.navbar {
+  background-color: #f1f1e8;
+}
+.navbar .navbar-brand {
+  padding: 3rem;
+  font-size: 2rem;
+}
+.navbar .navbar-nav {
+  margin-right: 10rem;
+}
+.navbar .navbar-nav .nav-link {
+  font-family: "Baloo Tammudu 2", cursive;
+  color: #206a5d !important;
+}
+
+@media only screen and (max-width: 500px) {
+  .navbar .navbar-brand {
+    padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+    font-size: 1.4rem;
+  }
+}
+footer {
+  font-family: "Baloo Tammudu 2", cursive;
+}
+footer .container-fluid {
+  background-color: #206a5d;
+}
+footer p {
+  color: #f1f1e8;
+}
+
+#lpContent {
+  background-color: #f1f1e8;
+  height: calc(100vh - 274px);
+}
+#lpContent .jumbotron {
+  background-color: #f1f1e8;
+  margin-bottom: 0;
+}
+#lpContent .container {
+  font-family: "Baloo Tammudu 2", cursive;
+  color: #206a5d;
+}
+#lpContent .container .main-button {
+  margin-top: 2rem;
+  background-color: #bfdcae;
+  padding: 1.5rem 1.5rem 0.7rem 1.5rem;
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 500px) {
+  #lpContent h1 {
+    font-size: 2rem;
+  }
+}
+.login-signup {
+  font-family: "Baloo Tammudu 2", cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 274px);
+  background-color: #206a5d;
+  color: #206a5d;
+}
+.login-signup .container {
+  padding: 3rem 2rem;
+  border-radius: 30px;
+  width: 20rem;
+  height: 28rem;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.login-signup .container .logo {
+  text-align: center;
+  display: block;
+}
+.login-signup .container .main-button {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  background-color: #206a5d;
+  color: #f1f1e8;
+}
+.login-signup .container .main-button:hover {
+  background: #fff;
+  color: #206a5d;
+}
+
+@media only screen and (max-width: 400px) {
+  .login-signup .container {
+    border-radius: 0;
+    width: 100%;
+  }
+}
+#products-list {
+  color: #206a5d;
+  font-family: "Baloo Tammudu 2", cursive;
+}
+#products-list .card {
+  background-color: #f1f1e8;
+  border: 2px solid #206a5d;
+  border-radius: 6px;
+}
+#products-list .card img {
+  height: 10rem;
+}
+#products-list .main-button {
+  padding: 0.2rem 0.5rem 0.1rem 0.5rem;
+  background-color: #206a5d;
+  color: #f1f1e8;
+}
+#products-list .main-button:hover {
+  background-color: white;
+  color: #206a5d;
+}
+#products-list #test:hover {
+  background-color: #206a5d;
+  color: #f1f1e8;
+}
+
+@media only screen and (max-width: 575px) {
+  #products-list .card img {
+    height: 20rem;
+  }
+}
+.add-edit-product {
+  color: #206a5d;
+  font-family: "Baloo Tammudu 2", cursive;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  height: calc(100vh - 200px);
+}
+.add-edit-product .container form {
+  width: 50%;
+  margin: 0 auto;
+}
+.add-edit-product .container .main-button {
+  padding: 0.5rem;
+  background-color: #206a5d;
+  color: #f1f1e8;
+  display: block;
+  margin: 0 auto;
+  margin-top: 3rem !important;
+}
+.add-edit-product .container .main-button:hover {
+  background-color: white;
+  color: #206a5d;
+}
+.add-edit-product .container .form-control:focus {
+  box-shadow: inset 0 1px 1px #206a5d, 0 0 8px #206a5d;
+}
+.add-edit-product .container textarea {
+  resize: none;
+  height: 10rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .add-edit-product .container form {
+    width: 80%;
+  }
+}
+.add-edit-comments {
+  color: #206a5d;
+  font-family: "Baloo Tammudu 2", cursive;
+}
+.add-edit-comments .container {
+  margin-bottom: 3rem;
+}
+.add-edit-comments .container form {
+  width: 50%;
+  margin: 0 auto;
+}
+.add-edit-comments .container textarea {
+  resize: none;
+  height: 10rem;
+}
+.add-edit-comments .container .main-button {
+  padding: 0.5rem;
+  background-color: #206a5d;
+  color: #f1f1e8;
+  display: block;
+  margin: 0 auto;
+  margin-top: 3rem !important;
+}
+.add-edit-comments .container .main-button:hover {
+  background-color: white;
+  color: #206a5d;
+}
+.add-edit-comments .container .form-control:focus {
+  box-shadow: inset 0 1px 1px #206a5d, 0 0 8px #206a5d;
+}
+
+@media only screen and (max-width: 800px) {
+  .add-edit-comments .container form {
+    width: 80%;
+  }
+}
+#more-info-product {
+  font-family: "Baloo Tammudu 2", cursive;
+}
+#more-info-product .card img {
+  height: 35rem;
 }
 
 /*# sourceMappingURL=main.css.map */

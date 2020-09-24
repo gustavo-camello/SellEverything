@@ -1,0 +1,49 @@
+@use 'base';
+
+.login-signup {
+    font-family: base.$main-font;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 274px);
+    background-color: base.$color1;
+    color: base.$color1;
+
+    .container {
+        padding: 3rem 2rem; 
+        border-radius: 30px;
+        width: 20rem;
+        height: 28rem;
+        background-color: #fff;
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);   
+        
+        .logo {
+            text-align: center;
+            display: block;
+        }
+
+        .main-button {
+            width: 50%;
+            display: block;
+            margin: 0 auto;
+            background-color: base.$color1;
+            color: base.$color2;
+        }
+
+        .main-button:hover {
+            background: #fff;
+            color: base.$color1;
+        }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .login-signup {
+        .container {
+            border-radius: 0;
+            width: 100%;
+        }
+    }
+}

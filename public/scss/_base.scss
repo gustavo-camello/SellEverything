@@ -1,0 +1,43 @@
+// colors
+$color1: #206a5d;
+$color2: #f1f1e8;
+$color3: #bfdcae;
+$logo-color: #81b214;
+
+// font family
+$main-font: 'Baloo Tammudu 2', cursive;
+$logo-font:  'Josefin Sans', sans-serif;
+
+// logo
+.logo {
+    font-family: $logo-font;
+    color: $logo-color !important;
+}
+
+.logo:hover {
+    color: $logo-color;
+}
+
+// buttons
+.main-button {
+    color: $color1;
+    text-decoration: none !important;
+    border: 1px solid $color1;
+    border-radius: 10px;
+    padding: 0.5rem 0.5rem 0.1rem 0.5rem;
+    transition: all 0.5s ease;
+    display: inline-block;
+}
+
+.main-button:hover {
+    color: $color2;
+    background-color: $color1;
+}
+
+// jumbotron
+.style-jumbotron {  
+    h1 {
+        font-weight: bold;
+        color: $color1;
+    }
+}

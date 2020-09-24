@@ -1,3 +1,29 @@
-body {
-    background-color: red;
+@use 'base';
+
+.navbar {
+    background-color: base.$color2;
+
+    .navbar-brand {
+        padding: 3rem;
+        font-size: 2rem;
+    }
+
+    .navbar-nav {
+        margin-right: 10rem;
+
+        .nav-link {
+            font-family: base.$main-font;
+            color: base.$color1 !important;
+        }
+    }
 }
+
+@media only screen and (max-width: 500px) {
+    .navbar {
+        .navbar-brand {
+            padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+            font-size: 1.4rem;
+        }
+    }
+}
+
