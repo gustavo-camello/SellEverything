@@ -5,10 +5,9 @@
     font-family: base.$main-font;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    margin-top: 5rem;
-    height: calc(100vh - 200px);
+    min-height: calc(100vh - 274px);
 
     .container {
 
@@ -44,10 +43,17 @@
 
 @media only screen and (max-width: 800px){
     .add-edit-product {
+        margin-bottom: 3rem;
         .container {
             form {
                 width: 80%;
             }
         }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .add-edit-product {
+        min-height: calc(100vh - 244px);
     }
 }

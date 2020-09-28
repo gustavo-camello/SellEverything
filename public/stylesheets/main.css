@@ -7,14 +7,18 @@
   color: #81b214;
 }
 
-.main-button {
-  color: #206a5d;
+.style-button {
   text-decoration: none !important;
-  border: 1px solid #206a5d;
   border-radius: 10px;
   padding: 0.5rem 0.5rem 0.1rem 0.5rem;
   transition: all 0.5s ease;
   display: inline-block;
+}
+
+.main-button {
+  color: #206a5d;
+  border: 1px solid #206a5d;
+  background-color: #f1f1e8;
 }
 
 .main-button:hover {
@@ -22,11 +26,50 @@
   background-color: #206a5d;
 }
 
-.style-jumbotron h1 {
-  font-weight: bold;
-  color: #206a5d;
+.inverted-button {
+  color: #f1f1e8;
+  background-color: #206a5d;
+  border: 1px solid #f1f1e8;
 }
 
+.inverted-button:hover {
+  color: #206a5d;
+  background-color: #f1f1e8;
+  border: 1px solid #206a5d;
+}
+
+.jumbotron {
+  padding: 0;
+  background-color: #f1f1e8 !important;
+  font-family: "Baloo Tammudu 2", cursive;
+}
+
+.style-jumbotron {
+  margin: 0;
+}
+.style-jumbotron h1 {
+  font-weight: bold;
+  color: #f1f1e8;
+  background-color: #206a5d;
+  margin-bottom: 0;
+  padding: 7rem;
+  padding-top: 8rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .style-jumbotron h1 {
+    font-size: 2.5rem;
+    padding: 5rem;
+    padding-top: 6rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .style-jumbotron h1 {
+    font-size: 1.5rem;
+    padding: 3rem;
+    padding-top: 4rem;
+  }
+}
 .navbar {
   background-color: #f1f1e8;
 }
@@ -60,7 +103,7 @@ footer p {
 
 #lpContent {
   background-color: #f1f1e8;
-  height: calc(100vh - 274px);
+  min-height: calc(100vh - 274px);
 }
 #lpContent .jumbotron {
   background-color: #f1f1e8;
@@ -78,6 +121,9 @@ footer p {
 }
 
 @media only screen and (max-width: 500px) {
+  #lpContent {
+    min-height: calc(100vh - 244px);
+  }
   #lpContent h1 {
     font-size: 2rem;
   }
@@ -87,7 +133,7 @@ footer p {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 274px);
+  min-height: calc(100vh - 274px);
   background-color: #206a5d;
   color: #206a5d;
 }
@@ -117,7 +163,10 @@ footer p {
   color: #206a5d;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
+  .login-signup {
+    min-height: calc(100vh - 244px);
+  }
   .login-signup .container {
     border-radius: 0;
     width: 100%;
@@ -159,10 +208,9 @@ footer p {
   font-family: "Baloo Tammudu 2", cursive;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  margin-top: 5rem;
-  height: calc(100vh - 200px);
+  min-height: calc(100vh - 274px);
 }
 .add-edit-product .container form {
   width: 50%;
@@ -189,8 +237,16 @@ footer p {
 }
 
 @media only screen and (max-width: 800px) {
+  .add-edit-product {
+    margin-bottom: 3rem;
+  }
   .add-edit-product .container form {
     width: 80%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .add-edit-product {
+    min-height: calc(100vh - 244px);
   }
 }
 .add-edit-comments {
@@ -231,9 +287,60 @@ footer p {
 }
 #more-info-product {
   font-family: "Baloo Tammudu 2", cursive;
+  color: #206a5d;
 }
-#more-info-product .card img {
+#more-info-product .container .list-group-item {
+  border: 1px solid #206a5d;
+}
+#more-info-product .container .price {
+  margin: 2rem 2rem 0 0;
+  font-size: 2rem;
+}
+#more-info-product .container-fluid {
+  background-color: #f1f1e8;
+}
+#more-info-product .container-fluid h2 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+#more-info-product .card {
+  border: none;
+}
+#more-info-product form {
+  display: inline;
+}
+#more-info-product .info-product {
+  border: 1px solid #206a5d;
+  background-color: #f1f1e8;
+}
+#more-info-product .info-product img {
   height: 35rem;
+}
+#more-info-product .style-comment {
+  margin: 1rem;
+  background-color: #f1f1e8;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+#more-info-product .style-comment p {
+  margin-bottom: 0;
+}
+#more-info-product .style-comment .comment-date {
+  font-size: 0.7rem;
+}
+
+@media only screen and (max-width: 800px) {
+  #more-info-product .list-group {
+    margin-bottom: 2rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #more-info-product .col-md-9 {
+    padding: 0;
+  }
+  #more-info-product .info-product img {
+    height: 20rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

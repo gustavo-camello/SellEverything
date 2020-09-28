@@ -2,7 +2,7 @@
 
 #lpContent {
     background-color: base.$color2;
-    height: calc(100vh - 274px);
+    min-height: calc(100vh - 274px);
 
     .jumbotron {
         background-color: base.$color2;
@@ -25,6 +25,7 @@
 
 @media only screen and (max-width: 500px) {
     #lpContent {
+        min-height: calc(100vh - 244px);
         h1 {
             font-size: 2rem;
         }

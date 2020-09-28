@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 274px);
+    min-height: calc(100vh - 274px);
     background-color: base.$color1;
     color: base.$color1;
 
@@ -39,8 +39,9 @@
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
     .login-signup {
+        min-height: calc(100vh - 244px);
         .container {
             border-radius: 0;
             width: 100%;

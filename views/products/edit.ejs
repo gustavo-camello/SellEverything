@@ -1,29 +1,32 @@
 <%- include ("../partials/header.ejs") %>
 
-<section id="edit-product" class="add-edit-product">
+<section id="edit-product">
   <div class="jumbotron text-center style-jumbotron bg-white">
     <h1>Edit Your Product</h1>
   </div>
   
-  <div class="container">
-    <div class="row">
-      <form method="POST" action="/productsList/<%= product._id %>?_method=PUT">
-        <div class="form-group">
-          <label for="name">Product Name</label>
-          <input type="text" class="form-control" id="name" name="product[name]" value="<%= product.name %>">
-        </div>
-        <div class="form-group">
-          <label for="img">Image URL</label>
-          <input type="text" class="form-control" id="img" name="product[img]" value="<%= product.img %>">
-        </div>
-        <div class="form-group">
-          <label for="description">Description</label>
-          <textarea class="form-control" id="description" name="product[description]"><%= product.description %></textarea>
-        </div>
-        <button type="submit" class="main-button" style="width: 40%; margin: 0 auto;">Save</button>
-      </form>
+  <div class="add-edit-product mt-5">
+    <div class="container">
+      <div class="row">
+        <form method="POST" action="/productsList/<%= product._id %>?_method=PUT">
+          <div class="form-group">
+            <label for="name">Product Name</label>
+            <input type="text" class="form-control" id="name" name="product[name]" value="<%= product.name %>">
+          </div>
+          <div class="form-group">
+            <label for="img">Image URL</label>
+            <input type="text" class="form-control" id="img" name="product[img]" value="<%= product.img %>">
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" name="product[description]"><%= product.description %></textarea>
+          </div>
+          <button type="submit" class="style-button main-button" style="width: 40%; margin: 0 auto;">Save</button>
+        </form>
+      </div>
     </div>
   </div>
+  
 </section>
 
 

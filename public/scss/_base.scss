@@ -19,14 +19,18 @@ $logo-font:  'Josefin Sans', sans-serif;
 }
 
 // buttons
-.main-button {
-    color: $color1;
+.style-button {
     text-decoration: none !important;
-    border: 1px solid $color1;
     border-radius: 10px;
     padding: 0.5rem 0.5rem 0.1rem 0.5rem;
     transition: all 0.5s ease;
     display: inline-block;
+}
+
+.main-button {
+    color: $color1;
+    border: 1px solid $color1;
+    background-color: $color2;
 }
 
 .main-button:hover {
@@ -34,10 +38,53 @@ $logo-font:  'Josefin Sans', sans-serif;
     background-color: $color1;
 }
 
+.inverted-button {
+    color: $color2;
+    background-color: $color1;
+    border: 1px solid $color2;
+}
+
+.inverted-button:hover {
+    color: $color1;
+    background-color: $color2;
+    border: 1px solid $color1;
+}
+
 // jumbotron
-.style-jumbotron {  
+.jumbotron {
+    padding: 0;
+    background-color: $color2 !important;
+    font-family: $main-font;
+}
+.style-jumbotron { 
+    margin: 0;
+
     h1 {
         font-weight: bold;
-        color: $color1;
+        color: $color2;
+        background-color: $color1;
+        margin-bottom: 0;
+        padding: 7rem;
+        padding-top: 8rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .style-jumbotron {
+        h1 {
+            font-size: 2.5rem;
+            padding: 5rem;
+            padding-top: 6rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .style-jumbotron {
+        h1 {
+            font-size: 1.5rem;
+            padding: 3rem;
+            padding-top: 4rem;
+        }
     }
 }

@@ -1,29 +1,32 @@
 <%- include ("../partials/header.ejs") %>
 
-<section id="add-product" class="add-edit-product">
-  <div class="jumbotron text-center style-jumbotron bg-white">
-    <h1>Add Your Product</h1>
+<section id="add-product">
+  <div class="jumbotron jumbotron-fluid text-center style-jumbotron bg-white">
+    <h1 class="display-4">Add Your Product</h1>
   </div>
   
-  <div class="container">
-    <div class="row">
-      <form method="POST" action="/productsList">
-        <div class="form-group">
-          <label for="name">Product Name</label>
-          <input type="text" class="form-control" id="name" name="name">
-        </div>
-        <div class="form-group">
-          <label for="img">Image URL</label>
-          <input type="text" class="form-control" id="img" name="img">
-        </div>
-        <div class="form-group">
-          <label for="description">Description</label>
-          <textarea name="description" id="description" class="form-control"></textarea>
-        </div>
-        <button type="submit" class="main-button" style="width: 40%; margin: 0 auto;">Add Product</button>
-      </form>
+  <div class="add-edit-product my-5">
+    <div class="container">
+      <div class="row">
+        <form method="POST" action="/productsList">
+          <div class="form-group">
+            <label for="name">Product Name</label>
+            <input type="text" class="form-control" id="name" name="name">
+          </div>
+          <div class="form-group">
+            <label for="img">Image URL</label>
+            <input type="text" class="form-control" id="img" name="img">
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea name="description" id="description" class="form-control"></textarea>
+          </div>
+          <button type="submit" class="style-button main-button" style="width: 40%; margin: 0 auto;">Add Product</button>
+        </form>
+      </div>
     </div>
   </div>
+  
 </section>
 
 
