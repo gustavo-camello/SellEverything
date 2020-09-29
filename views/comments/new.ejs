@@ -10,7 +10,7 @@
         <form method="POST" action="/productsList/<%= product._id %>/comments">
           <div class="form-group">
             <label for="comment">Comment</label>
-            <textarea name="comment[text]" id="comment" class="form-control"></textarea>
+            <textarea name="comment[text]" id="comment" class="form-control" required></textarea>
           </div>
           <button type="submit" class="style-button inverted-button">Add Comment</button>
         </form>

@@ -20,6 +20,5 @@ let productSchema = new mongoose.Schema({
   ]
 });
 
-let Product = 
 
 module.exports = mongoose.model("Product", productSchema);
