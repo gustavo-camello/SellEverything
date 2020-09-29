@@ -14,11 +14,19 @@
         font-family: base.$main-font;
         color: base.$color1;
 
-        .main-button {
+        .inverted-button {
+            background-color: base.$logo-color;
+            border: 1px solid base.$color1;
+            color: base.$color1;
             margin-top: 2rem;
-            background-color: base.$color3;
-            padding: 1.5rem 1.5rem 0.7rem 1.5rem;
+            padding: 2.5rem 1.5rem 1.7rem 1.5rem;
             font-size: 1.5rem;
+        }
+
+        .inverted-button:hover {
+            background-color: base.$color1;
+            color: base.$logo-color;
+            border: 1px solid base.$logo-color;
         }
     }
 }

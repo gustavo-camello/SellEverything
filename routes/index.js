@@ -1,6 +1,7 @@
 const express = require('express');
 const route = express.Router();
 const passport = require('passport');
+const user = require('../modules/user');
 const User = require('../modules/user');
 
 // Root Route
@@ -43,6 +44,7 @@ route.post('/login', passport.authenticate('local',
     successRedirect: '/productsList',
     failureRedirect: '/register'
   }), (req, res) => {
+    req.flash('success', 'Welcome back');
 });
 
 // Logout Route

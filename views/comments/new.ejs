@@ -1,21 +1,23 @@
 <%- include ("../partials/header.ejs") %>
 
-<section id="new-comment" class="add-edit-comments">
+<section id="new-comment">
   <div class="jumbotron text-center style-jumbotron bg-white">
-    <h1>Ask Your Question</h1>
+    <h1 class="display-4">Your Comment</h1>
   </div>
-  
-  <div class="container">
-    <div class="row">
-      <form method="POST" action="/productsList/<%= product._id %>/comments">
-        <div class="form-group">
-          <label for="comment">Your Question</label>
-          <textarea name="comment[text]" id="comment" class="form-control"></textarea>
-        </div>
-        <button type="submit" class="style-button main-button">Add Question</button>
-      </form>
+  <div  class="add-edit-comments my-5">
+    <div class="container">
+      <div class="row my-2">
+        <form method="POST" action="/productsList/<%= product._id %>/comments">
+          <div class="form-group">
+            <label for="comment">Comment</label>
+            <textarea name="comment[text]" id="comment" class="form-control"></textarea>
+          </div>
+          <button type="submit" class="style-button inverted-button">Add Comment</button>
+        </form>
+      </div>
     </div>
   </div>
+
   
 </section>
 

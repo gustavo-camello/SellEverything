@@ -18,11 +18,26 @@
     }
 }
 
+#handling-errors {
+    background-color: base.$color2;
+
+    .alert {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
 @media only screen and (max-width: 500px) {
     .navbar {
         .navbar-brand {
             padding: 2.5rem 1.5rem 2.5rem 1.5rem;
             font-size: 1.4rem;
+        }
+    }
+
+    #handling-errors {
+        .alert {
+            width: 80%;
         }
     }
 }

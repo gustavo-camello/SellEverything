@@ -36,9 +36,11 @@ router.post('/', middleware.isLoggedIn, (req, res) => {
   // Create new product and save to DB
   Product.create(newProduct, (err, newProduct) => {
     if(err) {
+      req.flash('error', 'Something Went Wrong');
       console.log(err);
     } else {
       console.log(newProduct);
+      req.flash('success', 'Product Added');
       res.redirect('productsList');
     }
   })
@@ -68,8 +70,10 @@ router.get('/:id/edit', middleware.checkProductOwnership, (req, res) => {
 router.put('/:id', middleware.checkProductOwnership, (req, res) => {
   Product.findByIdAndUpdate(req.params.id, req.body.product, (err, updatedProduct) => {
     if (err) {
+      req.flash('error', 'Something Went Wrong')
       res.redirect('/productsList');
     } else {
+      req.flash('success', 'Product Successfully Updated')
       res.redirect('/productsList/' + req.params.id);
     }
   })
@@ -79,8 +83,10 @@ router.put('/:id', middleware.checkProductOwnership, (req, res) => {
 router.delete('/:id', middleware.checkProductOwnership, (req, res) => {
   Product.findByIdAndRemove(req.params.id, (err) => {
     if (err) {
+      req.flash('error', 'Something Went Wrong')
       res.redirect('/productsList');
     } else {
+      req.flash('success', 'Product Deleted')
       res.redirect('/productsList');
     }
   })

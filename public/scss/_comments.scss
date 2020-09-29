@@ -3,9 +3,13 @@
 .add-edit-comments{
     color: base.$color1;
     font-family: base.$main-font;
+    min-height: calc(100vh - 670px);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
 
     .container {
-        margin-bottom: 3rem;
 
         form {
             width: 50%;
@@ -17,13 +21,9 @@
             height: 10rem;
         }
 
-        .main-button {
-            padding: 0.5rem;
-            background-color: base.$color1;
-            color: base.$color2;
+        .inverted-button {
             display: block;
             margin: 0 auto;
-            margin-top: 3rem !important;
         }
     
         .main-button:hover {

@@ -3,10 +3,13 @@
 <section id="products-list">
   <div class="jumbotron jumbotron-fluid text-center bg-white style-jumbotron">
     <h1 class="display-4">See the Products Available</h1>
-    <p class="lead">Find what you are looking for</p>
-    <p>
-      <a href="/productsList/newProduct" class="btn btn-primary btn-lg">Add New Product</a>
-    </p>
+    <div id="add-product-button" class="card">
+      <p class="lead mt-4">Click in the Button to Add a Product</p>
+      <p>
+        <a href="/productsList/newProduct" class="style-button inverted-button">Add New Product</a>
+      </p>
+    </div>
+   
   </div>
   
   <main>
@@ -19,7 +22,7 @@
             <div class="card-body">
               <h5 class="card-title"><%= product.name.substring(0,10) %></h5>
               <p class="card-text"><%= product.description.substring(0, 10) %>...</p>
-              <a href="/productsList/<%= product._id %>" class="style-button main-button">More info</a>
+              <a href="/productsList/<%= product._id %>" class="style-button inverted-button">More info</a>
             </div>
           </div>
         </div>

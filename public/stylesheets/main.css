@@ -40,7 +40,6 @@
 
 .jumbotron {
   padding: 0;
-  background-color: #f1f1e8 !important;
   font-family: "Baloo Tammudu 2", cursive;
 }
 
@@ -85,10 +84,22 @@
   color: #206a5d !important;
 }
 
+#handling-errors {
+  background-color: #f1f1e8;
+}
+#handling-errors .alert {
+  width: 50%;
+  margin: 0 auto;
+}
+
 @media only screen and (max-width: 500px) {
   .navbar .navbar-brand {
     padding: 2.5rem 1.5rem 2.5rem 1.5rem;
     font-size: 1.4rem;
+  }
+
+  #handling-errors .alert {
+    width: 80%;
   }
 }
 footer {
@@ -113,11 +124,18 @@ footer p {
   font-family: "Baloo Tammudu 2", cursive;
   color: #206a5d;
 }
-#lpContent .container .main-button {
+#lpContent .container .inverted-button {
+  background-color: #81b214;
+  border: 1px solid #206a5d;
+  color: #206a5d;
   margin-top: 2rem;
-  background-color: #bfdcae;
-  padding: 1.5rem 1.5rem 0.7rem 1.5rem;
+  padding: 2.5rem 1.5rem 1.7rem 1.5rem;
   font-size: 1.5rem;
+}
+#lpContent .container .inverted-button:hover {
+  background-color: #206a5d;
+  color: #81b214;
+  border: 1px solid #81b214;
 }
 
 @media only screen and (max-width: 500px) {
@@ -176,29 +194,28 @@ footer p {
   color: #206a5d;
   font-family: "Baloo Tammudu 2", cursive;
 }
-#products-list .card {
+#products-list #add-product-button {
+  border: none;
+  border-radius: none;
   background-color: #f1f1e8;
+}
+#products-list main {
+  min-height: calc(100vh - 690px);
+  background-color: #f1f1e8;
+}
+#products-list .card {
+  background-color: #FFF;
   border: 2px solid #206a5d;
   border-radius: 6px;
 }
 #products-list .card img {
   height: 10rem;
 }
-#products-list .main-button {
-  padding: 0.2rem 0.5rem 0.1rem 0.5rem;
-  background-color: #206a5d;
-  color: #f1f1e8;
-}
-#products-list .main-button:hover {
-  background-color: white;
-  color: #206a5d;
-}
-#products-list #test:hover {
-  background-color: #206a5d;
-  color: #f1f1e8;
-}
 
 @media only screen and (max-width: 575px) {
+  #products-list #add-product-button .lead {
+    font-size: 0.8rem;
+  }
   #products-list .card img {
     height: 20rem;
   }
@@ -210,23 +227,15 @@ footer p {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  min-height: calc(100vh - 274px);
+  min-height: calc(100vh - 678px);
 }
 .add-edit-product .container form {
   width: 50%;
   margin: 0 auto;
 }
-.add-edit-product .container .main-button {
-  padding: 0.5rem;
-  background-color: #206a5d;
-  color: #f1f1e8;
+.add-edit-product .container .inverted-button {
   display: block;
   margin: 0 auto;
-  margin-top: 3rem !important;
-}
-.add-edit-product .container .main-button:hover {
-  background-color: white;
-  color: #206a5d;
 }
 .add-edit-product .container .form-control:focus {
   box-shadow: inset 0 1px 1px #206a5d, 0 0 8px #206a5d;
@@ -252,9 +261,11 @@ footer p {
 .add-edit-comments {
   color: #206a5d;
   font-family: "Baloo Tammudu 2", cursive;
-}
-.add-edit-comments .container {
-  margin-bottom: 3rem;
+  min-height: calc(100vh - 670px);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
 }
 .add-edit-comments .container form {
   width: 50%;
@@ -264,13 +275,9 @@ footer p {
   resize: none;
   height: 10rem;
 }
-.add-edit-comments .container .main-button {
-  padding: 0.5rem;
-  background-color: #206a5d;
-  color: #f1f1e8;
+.add-edit-comments .container .inverted-button {
   display: block;
   margin: 0 auto;
-  margin-top: 3rem !important;
 }
 .add-edit-comments .container .main-button:hover {
   background-color: white;
@@ -288,6 +295,7 @@ footer p {
 #more-info-product {
   font-family: "Baloo Tammudu 2", cursive;
   color: #206a5d;
+  min-height: calc(100vh - 275px);
 }
 #more-info-product .container .list-group-item {
   border: 1px solid #206a5d;
