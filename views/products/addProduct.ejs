@@ -5,13 +5,13 @@
     <h1 class="display-4">Add Your Product</h1>
   </div>
   
-  <div class="add-edit-product my-5">
+  <div class="add-edit-product my-3">
     <div class="container">
-      <div class="row">
+      <div class="row my-5">
         <form method="POST" action="/productsList">
           <div class="form-group">
             <label for="name">Product Name</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+            <input type="text" class="form-control" id="name" name="name" required minlength="19" maxlength="34">
           </div>
           <div class="form-group">
             <label for="img">Image URL</label>
@@ -19,7 +19,7 @@
           </div>
           <div class="form-group">
             <label for="description">Description</label>
-            <textarea name="description" id="description" class="form-control" required></textarea>
+            <textarea name="description" id="description" class="form-control" required minlength="20"></textarea>
           </div>
           <button type="submit" class="style-button inverted-button" style="width: 40%; margin: 0 auto;">Add Product</button>
         </form>

@@ -227,7 +227,7 @@ footer p {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  min-height: calc(100vh - 678px);
+  min-height: calc(100vh - 610px);
 }
 .add-edit-product .container form {
   width: 50%;

@@ -20,8 +20,8 @@
           <div class="card">
             <img src="<%= product.img %>" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title"><%= product.name.substring(0,10) %></h5>
-              <p class="card-text"><%= product.description.substring(0, 10) %>...</p>
+              <h5 class="card-title"><%= product.name.substring(0,19) %></h5>
+              <p class="card-text"><%= product.description.substring(0, 40) %>...</p>
               <a href="/productsList/<%= product._id %>" class="style-button inverted-button">More info</a>
             </div>
           </div>
