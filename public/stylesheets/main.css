@@ -15,6 +15,11 @@
   display: inline-block;
 }
 
+.style-button:focus {
+  box-shadow: none;
+  outline: none;
+}
+
 .main-button {
   color: #206a5d;
   border: 1px solid #206a5d;

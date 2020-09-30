@@ -27,6 +27,11 @@ $logo-font:  'Josefin Sans', sans-serif;
     display: inline-block;
 }
 
+.style-button:focus {
+    box-shadow: none;
+    outline: none;
+}
+
 .main-button {
     color: $color1;
     border: 1px solid $color1;
