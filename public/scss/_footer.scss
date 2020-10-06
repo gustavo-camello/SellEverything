@@ -4,6 +4,12 @@ footer {
     font-family: base.$main-font;
     .container-fluid {
         background-color: base.$color1;
+
+        .col-sm-4:nth-child(2) {
+            p:nth-child(2) {
+                margin-top: 0.5rem;
+            }
+        }
     }
 
     h4 {
@@ -15,10 +21,18 @@ footer {
     i {
         font-size: 1.5rem;
         color: base.$logo-color;
-        padding: 1rem;
+        padding: 0.5rem;
     }
 
     p {
         color: base.$color2;
+        margin-bottom: 0;
+    }
+
+}
+
+@media only screen and (max-width: 576px) {
+    .col-sm-4:nth-child(2) {
+        padding: 1.5rem;
     }
 }

@@ -113,6 +113,9 @@ footer {
 footer .container-fluid {
   background-color: #206a5d;
 }
+footer .container-fluid .col-sm-4:nth-child(2) p:nth-child(2) {
+  margin-top: 0.5rem;
+}
 footer h4 {
   color: #f1f1e8;
   font-size: 1rem;
@@ -121,15 +124,21 @@ footer h4 {
 footer i {
   font-size: 1.5rem;
   color: #81b214;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 footer p {
   color: #f1f1e8;
+  margin-bottom: 0;
 }
 
+@media only screen and (max-width: 576px) {
+  .col-sm-4:nth-child(2) {
+    padding: 1.5rem;
+  }
+}
 #lpContent {
   background-color: #f1f1e8;
-  min-height: calc(100vh - 274px);
+  min-height: calc(100vh - 254px);
 }
 #lpContent .jumbotron {
   background-color: #f1f1e8;
@@ -166,7 +175,7 @@ footer p {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 274px);
+  min-height: calc(100vh - 254px);
   background-color: #206a5d;
   color: #206a5d;
 }
@@ -215,7 +224,7 @@ footer p {
   background-color: #f1f1e8;
 }
 #products-list main {
-  min-height: calc(100vh - 690px);
+  min-height: calc(100vh - 592px);
   background-color: #f1f1e8;
 }
 #products-list .card {
@@ -242,7 +251,7 @@ footer p {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  min-height: calc(100vh - 610px);
+  min-height: calc(100vh - 592px);
 }
 .add-edit-product .container form {
   width: 50%;
@@ -276,7 +285,7 @@ footer p {
 .add-edit-comments {
   color: #206a5d;
   font-family: "Baloo Tammudu 2", cursive;
-  min-height: calc(100vh - 670px);
+  min-height: calc(100vh - 592px);
   display: flex;
   flex-direction: column;
   justify-content: start;
