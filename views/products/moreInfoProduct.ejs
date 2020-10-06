@@ -1,94 +1,106 @@
 <%- include ("../partials/header.ejs") %>
 
 <section id="more-info-product">
-
   <div class="jumbotron jumbotron-fluid text-center bg-white style-jumbotron">
     <h1 class="display-4"><%= product.name %></h1>
   </div>
 
   <div class="container py-5">
-      <div class="row">
-        <div class="col-md-3">
-          <p class="lead">Contact the seller</p>
-          <div class="list-group">
+    <div class="row">
+      <div class="col-md-3">
+        <p class="lead">Contact the seller</p>
+        <ol class="list-group">
             <li class="list-group-item">Name: Gustavo Camello</li>
             <li class="list-group-item">Email: email@gmail.com</li>
             <li class="list-group-item">Phone: 12312312</li>
-          </div>
-        </div>
-        <div class="col-md-9">
-          <div class="card info-product">
-            <img src="<%= product.img %>" alt="" class="img-fluid" />
-          </div>
+        </ol>
+      </div>
+      <div class="col-md-9">
+        <div class="card info-product">
+          <img src="<%= product.img %>" alt="" class="img-fluid" />
         </div>
       </div>
+    </div>
   </div>
-  
-<div class="container-fluid">
-<div class="container">
-  <div class="row">
-    <div class="col-md-3">
 
-    </div>
-    <div class="col-md-9">
-      <p class="text-right price">€15.00</p>
-      <p class="p-4"><%= product.description %></p>
-      <p class="px-4 py-1"><em>Submitted By <%= product.author.username %></em></p>
-      <% if (currentUser && product.author.id.equals(currentUser._id)) { %>
-      <div class="p-3">
-        <a class="style-button inverted-button" href="/productsList/<%= product._id %>/edit">Edit</a>
-        <form action="/productsList/<%= product._id %>?_method=DELETE" method="POST">
-          <button class="style-button inverted-button">Delete</button>
-        </form>
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-9">
+          <p class="text-right price">€15.00</p>
+          <p class="p-4"><%= product.description %></p>
+          <p class="px-4 py-1">
+            <em>Submitted By <%= product.author.username %></em>
+          </p>
+          <% if (currentUser && product.author.id.equals(currentUser._id)) { %>
+          <div class="p-3">
+            <a
+              class="style-button inverted-button"
+              href="/productsList/<%= product._id %>/edit"
+              >Edit</a
+            >
+            <form
+              action="/productsList/<%= product._id %>?_method=DELETE"
+              method="POST"
+            >
+              <button class="style-button inverted-button">Delete</button>
+            </form>
+          </div>
+
+          <% } %>
+        </div>
       </div>
-      
-      <% } %>
     </div>
   </div>
-</div>
-</div>
-              
 
   <div class="container">
     <div class="row">
       <div class="col">
         <h2 class="mt-5 text-center">Leave a comment or ask something</h2>
-        
-          <div class="text-right">
-            <a class="style-button inverted-button" href="/productsList/<%= product._id %>/comments/new">Add New Comment</a>
-          </div>
-          <div class="card my-3">
-          <div class="list-group list-group-flush">
-            
 
-            
-            <% product.comments.forEach((comment) => { %>
-              
-              <div class="style-comment">
-                <p><strong><%= comment.author.username %></strong></p>
-                <p> <%= comment.text %></p>
-                <p class="text-right comment-date">10 days ago</p>
-  
-                  <% if (currentUser && comment.author.id.equals(currentUser._id)) { %>
-                  <a href="/productsList/<%= product._id %>/comments/<%= comment._id %>/edit" class="style-button inverted-button">Edit</a>
-                  <form action="/productsList/<%= product._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
-                    <input type="submit" class="style-button inverted-button" value="Delete">
-                  </form>
-
-                <% } %>
-              </div>
-                <% }) %>
-  
-              
-          </div>  
+        <div class="text-right">
+          <a
+            class="style-button inverted-button"
+            href="/productsList/<%= product._id %>/comments/new"
+            >Add New Comment</a
+          >
         </div>
-  
+        <div class="card my-3">
+          <div class="list-group list-group-flush">
+            <% product.comments.forEach((comment) => { %>
+
+            <div class="style-comment">
+              <p><strong><%= comment.author.username %></strong></p>
+              <p><%= comment.text %></p>
+              <p class="text-right comment-date">10 days ago</p>
+
+              <% if (currentUser && comment.author.id.equals(currentUser._id)) {
+              %>
+              <a
+                href="/productsList/<%= product._id %>/comments/<%= comment._id %>/edit"
+                class="style-button inverted-button"
+                >Edit</a
+              >
+              <form
+                action="/productsList/<%= product._id %>/comments/<%= comment._id %>?_method=DELETE"
+                method="POST"
+              >
+                <input
+                  type="submit"
+                  class="style-button inverted-button"
+                  value="Delete"
+                />
+              </form>
+
+              <% } %>
+            </div>
+            <% }) %>
+          </div>
+        </div>
       </div>
     </div>
-  
   </div>
-    
 </section>
-
 
 <%- include ("../partials/footer.ejs") %>

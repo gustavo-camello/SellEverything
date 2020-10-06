@@ -14,6 +14,11 @@
         .nav-link {
             font-family: base.$main-font;
             color: base.$color1 !important;
+            transition: all 1s;
+        }
+
+        .nav-link:hover {
+            color: base.$logo-color !important;
         }
     }
 }

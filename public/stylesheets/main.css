@@ -87,6 +87,10 @@
 .navbar .navbar-nav .nav-link {
   font-family: "Baloo Tammudu 2", cursive;
   color: #206a5d !important;
+  transition: all 1s;
+}
+.navbar .navbar-nav .nav-link:hover {
+  color: #81b214 !important;
 }
 
 #handling-errors {
@@ -223,7 +227,7 @@ footer p {
   border-radius: none;
   background-color: #f1f1e8;
 }
-#products-list main {
+#products-list #list {
   min-height: calc(100vh - 592px);
   background-color: #f1f1e8;
 }

@@ -21,6 +21,8 @@ This project contains all CRUD functions, authentication, login/logout and sign 
 - New picture upload
 - Improved form validation
 - New way to display errors for the user
+- Dynamic price
+- Seller information
 
 ## Improvements
 Help us to improve and make a better aplication, if you see any error or have an idea
