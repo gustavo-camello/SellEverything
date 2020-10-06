@@ -30,4 +30,4 @@ to improve, please send an email!
 
 Gustavo Camello - gucamello@gmail.com
 
-Live demo - (http://selleverything-gc.herokuapp.com/)
+Live demo - http://selleverything-gc.herokuapp.com/

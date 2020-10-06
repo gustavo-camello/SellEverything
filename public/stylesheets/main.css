@@ -113,6 +113,16 @@ footer {
 footer .container-fluid {
   background-color: #206a5d;
 }
+footer h4 {
+  color: #f1f1e8;
+  font-size: 1rem;
+  margin-bottom: -0.3rem;
+}
+footer i {
+  font-size: 1.5rem;
+  color: #81b214;
+  padding: 1rem;
+}
 footer p {
   color: #f1f1e8;
 }
